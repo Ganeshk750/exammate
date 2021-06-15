@@ -3,6 +3,8 @@
  */
 package com.kumarg.exammate.entity;
 
+import java.util.Set;
+
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -10,6 +12,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 /**
  * @Project:exammate
@@ -20,6 +28,10 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="user_roles")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class UserRole {
     
 	@Id
