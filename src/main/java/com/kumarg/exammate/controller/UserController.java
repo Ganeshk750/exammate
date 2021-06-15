@@ -24,30 +24,29 @@ import lombok.RequiredArgsConstructor;
  */
 
 @RestController
+
 @RequiredArgsConstructor
 public class UserController {
 	
-	private static UserService userService;
-	
-	public ResponseEntity<UserDto> createUser(@Valid @RequestBody UserDto userDto){
-		
-		// convert UserDto to User entity
-		User user = new User();
-		user.setUserName(userDto.getUserName());
-		user.setFirstName(userDto.getFirstName());
-		user.setLastName(userDto.getLastName());
-		user.setEmail(user.getEmail());
-		user.setPassword(userDto.getPassword());
-		user.setPhoneNumber(userDto.getPhoneNumber());
-		user.setProfile(userDto.getProfile());
-		user.setUserRoles(userDto.getUserRoles());
-		
-		//User userSaved = userService.createUser(user, userRoleDto)
-	
-		// convert User entity to UserDto class
-		UserDto userResponse = new UserDto();
-		
-		return new ResponseEntity<UserDto>(userResponse, HttpStatus.CREATED);
-	}
-
+	/*
+	 * private final UserService userService;
+	 * 
+	 * public ResponseEntity<UserDto> createUser(@Valid @RequestBody UserDto
+	 * userDto){
+	 * 
+	 * // convert UserDto to User entity User user = new User();
+	 * user.setUserName(userDto.getUserName());
+	 * user.setFirstName(userDto.getFirstName());
+	 * user.setLastName(userDto.getLastName()); user.setEmail(user.getEmail());
+	 * user.setPassword(userDto.getPassword());
+	 * user.setPhoneNumber(userDto.getPhoneNumber());
+	 * user.setProfile(userDto.getProfile());
+	 * user.setUserRoles(userDto.getUserRoles());
+	 * 
+	 * //User userSaved = userService.createUser(user, userRoleDto)
+	 * 
+	 * // convert User entity to UserDto class UserDto userResponse = new UserDto();
+	 * 
+	 * return new ResponseEntity<UserDto>(userResponse, HttpStatus.CREATED); }
+	 */
 }

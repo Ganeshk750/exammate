@@ -7,6 +7,8 @@ import java.util.Set;
 
 import com.kumarg.exammate.dto.UserDto;
 import com.kumarg.exammate.dto.UserRoleDto;
+import com.kumarg.exammate.entity.User;
+import com.kumarg.exammate.entity.UserRole;
 
 /**
  * @Project:exammate
@@ -16,6 +18,6 @@ import com.kumarg.exammate.dto.UserRoleDto;
  */
 public interface UserService {
 	
-	public UserDto createUser(UserDto user, Set<UserRoleDto> userRoleDto);
+	public User createUser(User user, Set<UserRole> userRole) throws Exception;
 
 }
