@@ -12,6 +12,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -44,33 +50,47 @@ public class User {
 	private Long uderId;
 	
 	@Column(name = "USER_NAME")
+	@NotEmpty
+	@Size(min = 6, message = "user name should have at least 6 characters")
 	private String userName;
 	
 	@Column(name ="FIRST_NAME")
+	@NotEmpty
+	@Size(min = 3, message = "first name should have at least 3 characters")
 	private String firstName;
 	
 	@Column(name ="LAST_NAME")
+	@NotEmpty
+	@Size(min = 3, message = "last name should have at least 3 characters")
 	private String lastName;
 	
 	@Column(name="EMAIL")
+	@NotEmpty
+	@Email
 	private String email;
 	
 	@Column(name="PASSWORD")
+	@NotEmpty
+	@Size(min = 8, message = "password should have at least 8 characters")
 	private String password;
 	
 	@Column(name="PHONE_NUMBER")
+	@NotBlank(message = "Phone Number is required")
+	@Size(max = 15,min=10, message = "Phone Number length should be less than or equal to 15")
 	private String phoneNumber;
 	
+	@NotEmpty
 	@Column(name="ENABLED")
 	private boolean enabled = true;
 	
+	@NotEmpty
 	@Column(name="PROFILE")
 	private String profile;
 	
     //mapping 
 	
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy="user")
-	//@JsonIgnore
+	@JsonIgnore
 	private Set<UserRole> userRoles = new HashSet<UserRole>();
 	
 }

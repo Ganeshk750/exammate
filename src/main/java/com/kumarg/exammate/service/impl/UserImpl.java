@@ -7,8 +7,7 @@ import java.util.Set;
 
 import org.springframework.stereotype.Service;
 
-import com.kumarg.exammate.dto.UserDto;
-import com.kumarg.exammate.dto.UserRoleDto;
+
 import com.kumarg.exammate.entity.User;
 import com.kumarg.exammate.entity.UserRole;
 import com.kumarg.exammate.repository.RoleRepository;
