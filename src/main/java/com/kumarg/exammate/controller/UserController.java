@@ -31,12 +31,12 @@ import lombok.RequiredArgsConstructor;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("api/v1/users")
+@RequestMapping("api/v1")
 public class UserController {
 
 	private final UserService userService;
     
-	@PostMapping
+	@PostMapping("/users")
 	public ResponseEntity<User> createUser(@Valid @RequestBody User user) throws Exception {
         Set<UserRole> roles = new HashSet<>();
         Role role = new Role();
