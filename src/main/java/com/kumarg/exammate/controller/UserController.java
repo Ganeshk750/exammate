@@ -4,12 +4,14 @@
 package com.kumarg.exammate.controller;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.validation.Valid;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -37,7 +39,7 @@ public class UserController {
 	private final UserService userService;
     
 	@PostMapping("/users")
-	public ResponseEntity<User> createUser(@Valid @RequestBody User user) throws Exception {
+	public ResponseEntity<User> createUser(@RequestBody User user) throws Exception {
         Set<UserRole> roles = new HashSet<>();
         Role role = new Role();
         role.setRoleName("USER");
@@ -47,6 +49,12 @@ public class UserController {
         roles.add(userRole);
         User savedUser = this.userService.createUser(user, roles);
 		return new ResponseEntity<User>(savedUser, HttpStatus.CREATED);
+	}
+	
+	@GetMapping("/users")
+	public ResponseEntity<List<User>> createUser() {
+        List<User> GetAllUser = userService.getAllUsers();
+		return new ResponseEntity<List<User>>(GetAllUser, HttpStatus.OK);
 	}
 
 }

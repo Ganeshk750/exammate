@@ -3,6 +3,7 @@
  */
 package com.kumarg.exammate.service;
 
+import java.util.List;
 import java.util.Set;
 
 import com.kumarg.exammate.entity.User;
@@ -17,5 +18,7 @@ import com.kumarg.exammate.entity.UserRole;
 public interface UserService {
 	
 	public User createUser(User user, Set<UserRole> userRole) throws Exception;
+	
+	public List<User> getAllUsers();
 
 }

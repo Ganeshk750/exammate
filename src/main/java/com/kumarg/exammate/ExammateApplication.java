@@ -27,26 +27,26 @@ public class ExammateApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		
-//		User user = new User();
-//		user.setUserName("ganesh123");
-//		user.setFirstName("Ganesh");
-//		user.setLastName("Kumar");
-//		user.setEmail("ganesh@gmail.com");
-//		user.setPassword("123456789");
-//		user.setPhoneNumber("7814120512");
-//		user.setProfile("default.png");
-//		
-//		Role role = new Role();
-//		role.setRoleName("ADMIN");
-//		
-//		Set<UserRole> userRoleSet = new HashSet<>();
-//		UserRole userRole = new UserRole();
-//		userRole.setRole(role);
-//		userRole.setUser(user);
-//		userRoleSet.add(userRole);
-//		
-//		User user1  = this.userServie.createUser(user, userRoleSet);
-//		System.out.println(user1.getFirstName());
+		User user = new User();
+		user.setUserName("ganesh123");
+		user.setFirstName("Ganesh");
+		user.setLastName("Kumar");
+		user.setEmail("ganesh@gmail.com");
+		user.setPassword("123456789");
+		user.setPhoneNumber("7814120512");
+		user.setProfile("default.png");
+		
+		Role role = new Role();
+		role.setRoleName("ADMIN");
+		
+		Set<UserRole> userRoleSet = new HashSet<>();
+		UserRole userRole = new UserRole();
+		userRole.setRole(role);
+		userRole.setUser(user);
+		userRoleSet.add(userRole);
+		
+		User user1  = this.userServie.createUser(user, userRoleSet);
+		System.out.println(user1.getFirstName());
 	}
 
 }

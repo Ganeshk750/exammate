@@ -3,6 +3,7 @@
  */
 package com.kumarg.exammate.service.impl;
 
+import java.util.List;
 import java.util.Set;
 
 import org.springframework.stereotype.Service;
@@ -48,6 +49,13 @@ public class UserImpl implements UserService {
 		}
 		return existUser;
 	}
+
+	@Override
+	public List<User> getAllUsers() {
+		return userRepository.findAll();
+	}
+	
+	
 	
 	
 
