@@ -50,27 +50,27 @@ public class User {
 	private Long uderId;
 	
 	@Column(name = "USER_NAME")
-	@NotEmpty
+	@NotEmpty(message = "Please enter userName")
 	@Size(min = 6, message = "user name should have at least 6 characters")
 	private String userName;
 	
 	@Column(name ="FIRST_NAME")
-	@NotEmpty
+	@NotEmpty(message = "Please enter firstName")
 	@Size(min = 3, message = "first name should have at least 3 characters")
 	private String firstName;
 	
 	@Column(name ="LAST_NAME")
-	@NotEmpty
+	@NotEmpty(message = "Please enter lastName")
 	@Size(min = 3, message = "last name should have at least 3 characters")
 	private String lastName;
 	
 	@Column(name="EMAIL")
-	@NotEmpty
+	@NotEmpty(message = "Please enter email")
 	@Email
 	private String email;
 	
 	@Column(name="PASSWORD")
-	@NotEmpty
+	@NotEmpty(message = "Please enter password")
 	@Size(min = 8, message = "password should have at least 8 characters")
 	private String password;
 	
@@ -79,11 +79,11 @@ public class User {
 	@Size(max = 15,min=10, message = "Phone Number length should be less than or equal to 15")
 	private String phoneNumber;
 	
-	@NotEmpty
+	//@NotEmpty
 	@Column(name="ENABLED")
 	private boolean enabled = true;
 	
-	@NotEmpty
+	@NotEmpty(message = "Please enter profile image link")
 	@Column(name="PROFILE")
 	private String profile;
 	

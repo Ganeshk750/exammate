@@ -39,11 +39,10 @@ public class UserRole {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long userRoleId;
 	
-	@NotEmpty
+	@NotEmpty(message = "Please enter user")
 	@ManyToOne(fetch = FetchType.EAGER)
 	private User user;
 	
-	@NotEmpty
 	@ManyToOne(fetch = FetchType.EAGER)
 	private Role role;
 }

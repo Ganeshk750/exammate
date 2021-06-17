@@ -43,7 +43,6 @@ public class Role {
 	private Long roleId;
 	
 	@Column(name="ROLE_NAME")
-	@NotEmpty
 	private String roleName;
 	
 	//Mapping
