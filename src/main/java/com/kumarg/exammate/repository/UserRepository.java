@@ -6,7 +6,6 @@ package com.kumarg.exammate.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.kumarg.exammate.dto.UserDto;
 import com.kumarg.exammate.entity.User;
 
 /**

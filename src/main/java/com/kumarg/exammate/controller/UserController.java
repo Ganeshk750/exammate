@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.kumarg.exammate.dto.UserDto;
 import com.kumarg.exammate.entity.Role;
 import com.kumarg.exammate.entity.User;
 import com.kumarg.exammate.entity.UserRole;
@@ -32,12 +31,12 @@ import lombok.RequiredArgsConstructor;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("api/v1/users")
+@RequestMapping("api/v1")
 public class UserController {
 
 	private final UserService userService;
     
-	@PostMapping
+	@PostMapping("/users")
 	public ResponseEntity<User> createUser(@Valid @RequestBody User user) throws Exception {
         Set<UserRole> roles = new HashSet<>();
         Role role = new Role();
