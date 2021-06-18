@@ -18,9 +18,8 @@ import com.kumarg.exammate.entity.User;
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
 
-	/**
-	 * @param userName
-	 */
 	public User findByuserName(String userName);
+	
+	
 
 }

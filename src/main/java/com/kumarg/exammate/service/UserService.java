@@ -20,5 +20,6 @@ public interface UserService {
 	public User createUser(User user, Set<UserRole> userRole) throws Exception;
 	
 	public List<User> getAllUsers();
+	
 
 }
